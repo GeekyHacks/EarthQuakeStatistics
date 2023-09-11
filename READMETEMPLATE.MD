@@ -1,13 +1,4 @@
-## README_TEMPLATE
-
-<div align="center">
-  <img src="./src/assets/welcometomyGIthub.png"  alt="GEEKY HACKS">
-  <br>
-
-</div>
-
-
-# RepoTitle
+# NewsWebsite_React
 
 <a name="readme-top"></a>
 
@@ -15,23 +6,17 @@
 
   <br/>
 
-  <h3><b>RepoTitle</b></h3>
-  <p>In this Repo I will create a simplified version of bookstore that allows me to: Display a list of books, Add a book, and Remove a selected book. Its an appilcation of using React and Redux in the context of a real application.</p>
+  <h3><b>NewsWebsite_React</b></h3>
+  <p>This repo will be a react website to be used for news publishing, its based on a theme I liked in wordpress and its a great place where I will be practicing my web development skills</p>
 
-<div align="center">
-  <img src="assests/images/Personal-portfolio-with-play.gif"  alt="Personal portfolio video">
-  <br>
-
-</div>
 </div>
 
 # 📗 Table of Contents
 
-- [RepoTitle](#RepoTitle)
+- [NewsWebsite_React](#NewsWebsite_React)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 RepoTitle< ](#RepoTitle)
+- [📖 NewsWebsite_React< ](#NewsWebsite_React)
 - [🚀 Live Demo ](#-live-demo-)
-- [📖 RepoTitle< ](#RepoTitle)
   - [🛠 Built With HTML, CSS and JavaScript](#-built-with-html-css-and-javascript)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -40,23 +25,20 @@
     - [Setup](#setup)
     - [Install](#install)
   - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [❓ FAQ ](#-faq-)
   - [📝 License ](#-license-)
 
-# 📖 RepoTitle< <a name="about-project"></a>
+# 📖 NewsWebsite_React< <a name="about-project"></a>
 
-**RepoTitle<e**
-In this Repo I will create a simplified version of bookstore that allows me to: Display a list of books, Add a book, and Remove a selected book. Its an appilcation of using React and Redux in the context of a real application.
+**NewsWebsite_React<e**
+In this project I will be making a calculator app using react
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://geekyhacks.github.io/RepoTitle/)
-
-# 📖 RepoTitle <a name="live-demo"></a>
+- [Wil be deployed soon](https://geekyhacks.github.io/MyNewsWebsite_React/)
 
 ## 🛠 Built With <a name="built-with">HTML, CSS and JavaScript</a>
 
@@ -66,18 +48,25 @@ In this Repo I will create a simplified version of bookstore that allows me to: 
     <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML</a></li>
     <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS">CSS</a></li>
     <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript">JavaScript</a></li>
-    <li><a href="https://sass-lang.com/">sass</a></li>
-    <li><a href="https://www.json.org/json-en.html">json</a></li>
+    <li><a href="https://eslint.org/">Eslint</a></li>
+    <li><a href="https://stylelint.io/">stylelint</a></li>
+    <li><a href="https://create-react-app.dev/">React</a></li>
   </ul>
 
 ### Key Features <a name="key-features">
 
 </a>
 
-- API
-- Webpack
-- Jest
-- Sass
+- [html](https://developer.mozilla.org/ru/docs/Web/HTML)
+- [AJAX](https://www.w3schools.com/xml/ajax_intro.asp)
+- [JS](https://developer.mozilla.org/ru/docs/Web/JavaScript)
+- [CSS](https://developer.mozilla.org/ru/docs/Web/CSS)
+- [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+- [React](https://create-react-app.dev/)
+- [Eslint](https://eslint.org/)
+- [stylelint](https://stylelint.io/)
+- [JSX](https://legacy.reactjs.org/docs/introducing-jsx.html)
+- [vite](https://vitejs.dev/guide/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -89,12 +78,15 @@ To get a local copy up and running, follow these steps:
 
 - Open your Terminal in your VSCode.
 - Navigate to the desired directory[folder] to which you want to clone the repository to
-- [Copy & Paste] git clone you find in the code button https://github.com/GeekyHacks/RepoTitle.git
+- [Copy & Paste] git clone you find in the code button https://github.com/GeekyHacks/NewsWebsite_React.git
 
 ### Prerequisites
 
-In order to run this project you need:
-
+To run and modify this project you need:
+- GitHub account
+- VSCode (or another code editor)
+- modern browser (supporting HTML5 and CSS3) is highly recommended
+- Node.js and npm installed
 - General Understanding of HTML & CSS
 - basic Knowledge of Git Commands
 - basic Knowledge of the Terminal Commands
@@ -104,28 +96,27 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-- git clone https://github.com/GeekyHacks/RepoTitle.git
+- git clone https://github.com/GeekyHacks/NewsWebsite_React.git
 
 Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/GeekyHacks/RepoTitle.git
+  git clone https://github.com/GeekyHacks/NewsWebsite_React.git
 
 ```
 
 --->
-
 ### Install
+This project was bootstrapped with Vite and React.
 
-Must-Install-Project-with-the-Following-Programmes:
+To install all dependencies run the following command:
+`npm install`
 
+suggusted VSC extentions:
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) Extention in VScode
-- [Git](https://git-scm.com/downloads)
-- [Node.js](https://nodejs.org/en/download)
-- [npm install](https://docs.npmjs.com/cli/v8/commands/npm-install)
-- [webpack](https://webpack.js.org/guides/installation/)
-- [Jest](https://jestjs.io/docs/getting-started)
+- [Microsoft Edge Tools for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)
+- [Save Typing](https://marketplace.visualstudio.com/items?itemName=akhail.save-typing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,17 +128,13 @@ Must-Install-Project-with-the-Following-Programmes:
 - Twitter: [Geekydart](https://twitter.com/GeekyDart)
 - LinkedIn: [Abdullah Nasser](https://www.linkedin.com/in/abdullah-nasser-711625268/)
 
-## 🔭 Future Features <a name="future-features"></a>
-
-- Adding more webpack deps
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/GeekyHacks/RepoTitle/issues).
+Feel free to check the [issues page](https://github.com/GeekyHacks/NewsWebsite_React/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -162,11 +149,10 @@ people.
 
 I would like to thank...
 
+-The incredible [tielabs](https://tielabs.com/product/sahifa-theme/) UI design 
 - Microverse Review Team
-- My Coding Partner @firstpj
 - Microverse Community in Slack
 - my Mentor @Strangeal
-- [Pokemon API](https://pokeapi.co/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

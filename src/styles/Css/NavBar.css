@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 1.2rem 1rem;
+  border-bottom: solid 1px #e8e8e8;
+}
+
+.navbar .logoInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar img {
+  width: 40px;
+}
+
+.navHeader {
+  font-size: 1.5em;
+  opacity: 0.8;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links a {
+  color: gray;
+  text-decoration: none;
+}
+
+.links a:active,
+.links a:focus {
+  opacity: 0.5;
+}
+
+.border {
+  padding: 1rem 1rem 1.2rem 1rem;
+  border-bottom: solid 1px #e8e8e8;
+}
+
+/*# sourceMappingURL=NavBar.css.map */

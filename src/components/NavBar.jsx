@@ -4,9 +4,8 @@ import '../styles/css/NavBar.css';
 
 const NavBar = () => {
   const result = (
-    <nav>
-      {' '}
-      <div className="continents">
+    <>
+      <nav>
         <NavLink className="quakeItem" to="/quakes/Africa">
           Africa
         </NavLink>
@@ -25,8 +24,8 @@ const NavBar = () => {
         <NavLink className="quakeItem" to="/quakes/Europe">
           Europe
         </NavLink>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 
   return result;

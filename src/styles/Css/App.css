@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,7 @@
 }
 
 body {
-  background: #308393;
+  background: transparent;
   font-size: 10px;
   padding: 0.2rem;
   display: flex;
@@ -16,7 +15,6 @@ body {
   align-items: stretch;
   white-space: nowrap;
 }
-
 body h2,
 body span,
 body h3 {
@@ -50,11 +48,9 @@ body h3 {
   will-change: filter;
   transition: filter 300ms;
 }
-
 .logo:hover {
   filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
 }
-
 .logo.react:hover {
   filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.6666666667));
 }
@@ -67,8 +63,9 @@ body h3 {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
 }
+
+/*# sourceMappingURL=App.css.map */

@@ -1,28 +1,32 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useEffect, useState } from 'react';
+import EarthquakeMap from './QuakeMap';
 
-const QuakeCard=()=> {
-  const earthquakes = [
-    /* your earthquake data */
-  ];
+const QuakeCard = () => {
+  const apiUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
+  const minMagnitude = 4; // Set your minimum magnitude threshold
+  const [filteredEarthquakes, setFilteredEarthquakes] = useState([]);
+
+  useEffect(() => {
+    // Fetch earthquake data and filter by magnitude
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        // Filter earthquakes by magnitude
+        const filteredQuakes = data.features.filter((quake) => quake.properties.mag > minMagnitude);
+        setFilteredEarthquakes(filteredQuakes);
+      })
+      .catch((error) => {
+        // Handle any errors that occur during the fetch
+        console.error('Error fetching earthquake data:', error);
+      });
+  }, [apiUrl, minMagnitude]);
 
   return (
-    <MapContainer center={[latitude, longitude]} zoom={zoomLevel} style={{ height: '400px', width: '100%' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {earthquakes.map((quake, index) => (
-        <Marker key={index} position={[quake.latitude, quake.longitude]}>
-          <Popup>
-            Magnitude: {quake.magnitude}
-            <br />
-            Location: {quake.location}
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    <div>
+      <h1>Earthquake Map</h1>
+      <EarthquakeMap earthquakes={filteredEarthquakes} />
+    </div>
   );
-}
+};
 
 export default QuakeCard;

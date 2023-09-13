@@ -1,5 +1,6 @@
+// QuakeCard.jsx
 import React, { useEffect, useState } from 'react';
-import EarthquakeMap from './QuakeMap';
+import MagnitudeMap from './MagnitudeMap';
 
 const QuakeCard = () => {
   const apiUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
@@ -27,7 +28,7 @@ const QuakeCard = () => {
   return (
     <div>
       <h1>Earthquake Map</h1>
-      <EarthquakeMap earthquakes={filteredEarthquakes} />
+      <MagnitudeMap earthquakes={filteredEarthquakes} />
     </div>
   );
 };

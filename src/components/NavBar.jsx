@@ -6,23 +6,14 @@ const NavBar = () => {
   const result = (
     <>
       <nav>
-        <NavLink className="quakeItem" to="/quakes/Africa">
-          Africa
+        <NavLink className="navItem" to="/quakes/EarthquakeMagnitude">
+          Earthquake with magnitude
         </NavLink>
-        <NavLink className="quakeItem" to="/quakes/Asia">
-          Asia
+        <NavLink className="navItem" to="/quakes/DynamicMagnitude">
+          Dynamic Magnitude
         </NavLink>
-        <NavLink className="quakeItem" to="/quakes/Australia">
-          Australia
-        </NavLink>
-        <NavLink className="quakeItem" to="/quakes/SouthAmerica">
-          South America
-        </NavLink>
-        <NavLink className="quakeItem" to="/quakes/NorthAmerica">
-          North America
-        </NavLink>
-        <NavLink className="quakeItem" to="/quakes/Europe">
-          Europe
+        <NavLink className="navItem" to="/quakes/Contact">
+          Contact
         </NavLink>
       </nav>
     </>

@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchEarthquakes, setMinMagnitude, setMaxMagnitude } from '../Redux/QuakeSlice';
-import QuakeMap from './QuakeMap';
+import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../Redux/QuakeSlice';
+import MagnitudeMap from './MagnitudeMap';
 
 const QuakeByMag = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const QuakeByMag = () => {
 
   useEffect(() => {
     // Fetch earthquake data when the component mounts
-    dispatch(fetchEarthquakes());
+    dispatch(FetchQuakeMag());
   }, [dispatch]);
 
   const handleMinMagnitudeChange = (e) => {
@@ -26,7 +26,7 @@ const QuakeByMag = () => {
 
   const handleMapRender = () => {
     // Dispatch the action to fetch earthquakes based on the input values
-    dispatch(fetchEarthquakes());
+    dispatch(FetchQuakeMag());
   };
 
   return (
@@ -45,7 +45,7 @@ const QuakeByMag = () => {
       {isLoading === 'failed' && <p>Error: {error}</p>}
       {isLoading === 'succeeded' && (
         <div>
-          <QuakeMap earthquakes={earthquakes} />
+          <MagnitudeMap earthquakes={earthquakes} />
         </div>
       )}
     </div>

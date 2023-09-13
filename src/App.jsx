@@ -1,6 +1,6 @@
 // import QuakeCard from './components/QuakeCard';
+import Footer from './components/Footer';
 import MainPage from './components/MainPage';
-import QuakeByMag from './components/QuakeByMag';
 import './styles/Css/App.Css';
 
 function App() {
@@ -8,7 +8,9 @@ function App() {
     <>
       {/* <QuakeCard /> */}
       {/* <QuakeByMag /> */}
+
       <MainPage />
+      <Footer />
     </>
   );
 }

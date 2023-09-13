@@ -1,10 +1,8 @@
 // MagnitudeSelector.jsx
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import FiveSix from './QuakeByMagnitude/FIveSIx'; // Import the FiveSix component
+import FiveSix from './Quakes'; // Import the FiveSix component
 
 const MagnitudeSelector = () => {
-  const dispatch = useDispatch();
   const [selectedMagnitude, setSelectedMagnitude] = useState(null);
 
   return (

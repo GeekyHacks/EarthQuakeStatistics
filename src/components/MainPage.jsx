@@ -6,7 +6,7 @@ import QuakeByMag from './QuakeByMagnitude/QuakeByMag';
 import Contact from './Contact';
 // import ContinentSelector from './ContinentSelector';
 // import FiveSix from './QuakeByMagnitude/FIveSIx';
-import MagnitudeSelector from './ContinentSelector';
+import MagnitudeSelector from './QuakeByMagnitude/MagnitudeSelector';
 
 export default function MainPage() {
   return (

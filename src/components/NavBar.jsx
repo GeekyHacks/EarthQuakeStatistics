@@ -6,8 +6,8 @@ const NavBar = () => {
   const result = (
     <>
       <nav>
-        <NavLink className="navItem" to="/quakes/EarthquakeMagnitude">
-          Earthquake with magnitude
+        <NavLink className="navItem" to="/quakes/">
+          Select Continent
         </NavLink>
         <NavLink className="navItem" to="/quakes/DynamicMagnitude">
           Dynamic Magnitude

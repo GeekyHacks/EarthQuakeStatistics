@@ -2,8 +2,9 @@ import React from 'react';
 import '../styles/css/NavBar.css';
 import NavBar from './NavBar';
 import { Route, Routes } from 'react-router-dom';
-import QuakeByMag from './QuakeByMag';
+import QuakeByMag from './QuakeByMagnitude/QuakeByMag';
 import Contact from './Contact';
+import ContinentSelector from './ContinentSelector';
 
 export default function MainPage() {
   return (
@@ -12,8 +13,8 @@ export default function MainPage() {
       {/* Removed the extra space */}
       <NavBar />
       <Routes>
-        <Route path="/quakes/EarthquakeMagnitude" element={<QuakeByMag />}>
-          Earthquake with magnitude
+        <Route path="/quakes/" element={<ContinentSelector />}>
+          Select Continent
         </Route>
         <Route path="/quakes/DynamicMagnitude" element={<QuakeByMag />}>
           Dynamic Magnitude
@@ -24,27 +25,4 @@ export default function MainPage() {
       </Routes>
     </div>
   );
-}
-
-{
-  /* <Routes>
-<Route path="/quakes/Africa" element={<QuakeByMag />}>
-  Africa
-</Route>
-<Route path="/quakes/Asia" element={<QuakeByMag />}>
-  Asia
-</Route>
-<Route path="/quakes/SouthAmerica" element={<QuakeByMag />}>
-  South America
-</Route>
-<Route path="/quakes/Australia" element={<QuakeByMag />}>
-  Australia
-</Route>
-<Route path="/quakes/NorthAmerica" element={<QuakeByMag />}>
-  North America
-</Route>
-<Route path="/quakes/Europe" element={<QuakeByMag />}>
-  Europe
-</Route>
-</Routes> */
 }

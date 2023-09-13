@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../Redux/QuakeSlice';
+import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
 import MagnitudeMap from './MagnitudeMap';
+import ContinentSelector from '../ContinentSelector'; // Import the ContinentSelector component
 
 const QuakeByMag = () => {
   const dispatch = useDispatch();
   const { earthquakes, isLoading, error, minMagnitude, maxMagnitude } = useSelector((state) => state.earthquake);
+  const [selectedContinent, setSelectedContinent] = useState(''); // Add selectedContinent state
 
   useEffect(() => {
     // Fetch earthquake data when the component mounts
@@ -15,23 +17,25 @@ const QuakeByMag = () => {
   }, [dispatch]);
 
   const handleMinMagnitudeChange = (e) => {
-    // Dispatch the action to set minMagnitude
     dispatch(setMinMagnitude(parseFloat(e.target.value)));
   };
 
   const handleMaxMagnitudeChange = (e) => {
-    // Dispatch the action to set maxMagnitude
     dispatch(setMaxMagnitude(parseFloat(e.target.value)));
   };
 
   const handleMapRender = () => {
-    // Dispatch the action to fetch earthquakes based on the input values
     dispatch(FetchQuakeMag());
+  };
+
+  const handleContinentChange = (continent) => {
+    setSelectedContinent(continent);
   };
 
   return (
     <div>
       <h1>Earthquake Map</h1>
+      <ContinentSelector onContinentChange={handleContinentChange} /> {/* Include ContinentSelector */}
       <div>
         <label htmlFor="minMagnitude">Minimum Magnitude:</label>
         <input type="number" id="minMagnitude" value={minMagnitude} onChange={handleMinMagnitudeChange} />
@@ -45,7 +49,7 @@ const QuakeByMag = () => {
       {isLoading === 'failed' && <p>Error: {error}</p>}
       {isLoading === 'succeeded' && (
         <div>
-          <MagnitudeMap earthquakes={earthquakes} />
+          <MagnitudeMap earthquakes={earthquakes} selectedContinent={selectedContinent} />
         </div>
       )}
     </div>

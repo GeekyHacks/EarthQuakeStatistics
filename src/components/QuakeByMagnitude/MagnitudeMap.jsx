@@ -1,9 +1,8 @@
-
 // MagnitudeMap.jsx
 
 import React, { useEffect } from 'react';
 import L from 'leaflet';
-import '../../node_modules/leaflet/dist/leaflet.css';
+import '../../../node_modules/leaflet/dist/leaflet.css';
 
 function MagnitudeMap({ earthquakes }) {
   useEffect(() => {

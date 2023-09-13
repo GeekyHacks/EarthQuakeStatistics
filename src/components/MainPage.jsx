@@ -4,7 +4,9 @@ import NavBar from './NavBar';
 import { Route, Routes } from 'react-router-dom';
 import QuakeByMag from './QuakeByMagnitude/QuakeByMag';
 import Contact from './Contact';
-import ContinentSelector from './ContinentSelector';
+// import ContinentSelector from './ContinentSelector';
+// import FiveSix from './QuakeByMagnitude/FIveSIx';
+import MagnitudeSelector from './ContinentSelector';
 
 export default function MainPage() {
   return (
@@ -13,7 +15,7 @@ export default function MainPage() {
       {/* Removed the extra space */}
       <NavBar />
       <Routes>
-        <Route path="/quakes/" element={<ContinentSelector />}>
+        <Route path="/quakes/" element={<MagnitudeSelector />}>
           Select Continent
         </Route>
         <Route path="/quakes/DynamicMagnitude" element={<QuakeByMag />}>

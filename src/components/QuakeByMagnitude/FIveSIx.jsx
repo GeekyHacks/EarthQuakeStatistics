@@ -1,35 +1,75 @@
-// EarthquakeMap.js
+// // FiveSix.jsx
+
+// import React, { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
+// import MagnitudeMap from './MagnitudeMap';
+
+// const FiveSix = () => {
+//   const dispatch = useDispatch();
+//   let { earthquakes, isLoading, error, minMagnitude, maxMagnitude } = useSelector((state) => state.earthquake);
+//   minMagnitude = 5;
+//   maxMagnitude = 6;
+//   useEffect(() => {
+//     // Fetch earthquake data when the component mounts and whenever min/max magnitude changes
+//     dispatch(FetchQuakeMag());
+//   }, [dispatch, minMagnitude, maxMagnitude]);
+
+//   const handleMinMagnitudeChange = () => {
+//     dispatch(setMinMagnitude(parseFloat(minMagnitude)));
+//   };
+
+//   const handleMaxMagnitudeChange = () => {
+//     dispatch(setMaxMagnitude(parseFloat(maxMagnitude)));
+//   };
+//   handleMinMagnitudeChange();
+//   handleMaxMagnitudeChange();
+//   return (
+//     <div>
+//       <h1>Earthquake Map</h1>
+//       {isLoading === 'loading' && <p>Loading...</p>}
+//       {isLoading === 'failed' && <p>Error: {error}</p>}
+//       {isLoading === 'succeeded' && earthquakes.length > 0 ? (
+//         <div>
+//           <MagnitudeMap earthquakes={earthquakes} />
+//         </div>
+//       ) : null}
+//     </div>
+//   );
+// };
+
+// export default FiveSix;
+
+// FiveSix.jsx
 import React, { useEffect } from 'react';
-import L from 'leaflet';
-import '../../node_modules/leaflet/dist/leaflet.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
+import MagnitudeMap from './MagnitudeMap';
 
-function EarthquakeMap({ earthquakes }) {
+const FiveSix = ({ minMagnitude, maxMagnitude }) => {
+  // Accept minMagnitude and maxMagnitude as props
+  const dispatch = useDispatch();
+  let { earthquakes, isLoading, error } = useSelector((state) => state.earthquake);
+
   useEffect(() => {
-    if (earthquakes.length === 0) {
-      return; // Don't initialize the map if there are no earthquakes
-    }
+    // Fetch earthquake data when the component mounts and whenever min/max magnitude changes
+    dispatch(setMinMagnitude(minMagnitude)); // Set minMagnitude from props
+    dispatch(setMaxMagnitude(maxMagnitude)); // Set maxMagnitude from props
+    dispatch(FetchQuakeMag());
+  }, [dispatch, minMagnitude, maxMagnitude]);
 
-    // Initialize the map
-    const map = L.map('map').setView([0, 0], 1); // Set an initial view and zoom level
+  return (
+    <div>
+      <h1>Earthquake Map</h1>
+      {isLoading === 'loading' && <p>Loading...</p>}
+      {isLoading === 'failed' && <p>Error: {error}</p>}
+      {isLoading === 'succeeded' && earthquakes.length > 0 ? (
+        <div>
+          <MagnitudeMap earthquakes={earthquakes} />
+        </div>
+      ) : null}
+    </div>
+  );
+};
 
-    // Add a tile layer to the map (you can choose a different one)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-    // Add earthquake pinpoints to the map
-    earthquakes.forEach((earthquake) => {
-      const { geometry, properties } = earthquake;
-      const { coordinates } = geometry;
-      const [longitude, latitude] = coordinates;
-
-      // Create a marker for each earthquake
-      const marker = L.marker([latitude, longitude]).addTo(map);
-
-      // Add a popup with earthquake information
-      marker.bindPopup(`Magnitude: ${properties.mag}<br>Location: ${properties.place}`);
-    });
-  }, [earthquakes]);
-
-  return <div id="map" style={{ height: '500px', width: '100vw' }}></div>;
-}
-
-export default EarthquakeMap;
+export default FiveSix;

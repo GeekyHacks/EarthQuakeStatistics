@@ -22,6 +22,7 @@ function MagnitudeMap({ earthquakes }) {
     // Add earthquake markers and popups to the map
     earthquakes.forEach((earthquake) => {
       const { geometry, properties } = earthquake;
+
       const { coordinates } = geometry;
       const [longitude, latitude] = coordinates;
 

@@ -1,32 +1,27 @@
+// MagnitudeSelector.jsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { FetchQuakeByContinent } from '../Redux/QuakeSlice';
-import ContinentMap from './QuakeByContinent/ContinentMap'; // Import the ContinentMap component
+import FiveSix from './QuakeByMagnitude/FIveSIx'; // Import the FiveSix component
 
-const ContinentSelector = () => {
+const MagnitudeSelector = () => {
   const dispatch = useDispatch();
-  const [selectedContinent, setSelectedContinent] = useState('');
-  const [earthquakesByContinent, setEarthquakesByContinent] = useState([]); // State to store earthquakes by continent
-
-  const handleContinentSelect = (continent) => {
-    setSelectedContinent(continent);
-    dispatch(FetchQuakeByContinent(continent)).then((action) => {
-      if (action.payload) {
-        setEarthquakesByContinent(action.payload);
-      }
-    });
-  };
+  const [selectedMagnitude, setSelectedMagnitude] = useState(null);
 
   return (
-    <div>
-      <h2>Select a Continent:</h2>
-      <button onClick={() => handleContinentSelect('Africa')}>Africa</button>
-      <button onClick={() => handleContinentSelect('Asia')}>Asia</button>
-      <button onClick={() => handleContinentSelect('Europe')}>Europe</button>
-      {/* Add more buttons for other continents */}
-      <div id="map-container">{selectedContinent && <ContinentMap earthquakes={earthquakesByContinent} />}</div>
+    <div className="MagnitudeSelector">
+      <h2>Select a Magnitude Range:</h2>
+      <button onClick={() => setSelectedMagnitude({ min: 4, max: 5 })}>Four to Five Magnitude</button>
+      <button onClick={() => setSelectedMagnitude({ min: 5, max: 6 })}>Five to Six Magnitude</button>
+      <button onClick={() => setSelectedMagnitude({ min: 6, max: 7 })}>Six to Seven Magnitude</button>
+      <button onClick={() => setSelectedMagnitude({ min: 7, max: 8 })}>Seven to Eight Magnitude</button>
+      <button onClick={() => setSelectedMagnitude({ min: 8, max: 9 })}>Eight to Nine Magnitude</button>
+      <button onClick={() => setSelectedMagnitude({ min: 9, max: 10 })}>Nine to Ten Magnitude</button>
+
+      <div id="map-container">
+        {selectedMagnitude && <FiveSix minMagnitude={selectedMagnitude.min} maxMagnitude={selectedMagnitude.max} />}
+      </div>
     </div>
   );
 };
 
-export default ContinentSelector;
+export default MagnitudeSelector;

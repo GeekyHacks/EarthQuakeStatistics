@@ -24,22 +24,6 @@ export const FetchQuakeMag = createAsyncThunk('earthquake/FetchQuakeMag', async 
   return filteredQuakes;
 });
 
-// export const FetchQuakeCoords = createAsyncThunk('earthquake/FetchQuakeCoords', async (_, { dispatch }) => {
-//   try {
-//     const response = await fetch(apiUrl);
-//     const data = await response.json();
-//     const coordinates = data.features.map((quake) => {
-//       const { geometry } = quake;
-//       console.log(geometry.coordinates);
-//       return geometry.coordinates;
-//     });
-//     console.log(coordinates);
-//     dispatch(setCoordinates(coordinates));
-//   } catch (error) {
-//     throw error;
-//   }
-// });
-
 const earthquakeSlice = createSlice({
   name: 'earthquake',
   initialState: initialState,
@@ -67,17 +51,6 @@ const earthquakeSlice = createSlice({
         state.isLoading = 'failed';
         state.error = action.error.message;
       });
-    // .addCase(FetchQuakeCoords.pending, (state) => {
-    //   state.isLoading = 'loading';
-    // })
-    // .addCase(FetchQuakeCoords.fulfilled, (state, action) => {
-    //   state.isLoading = 'succeeded';
-    //   state.coordinates = action.payload;
-    // })
-    // .addCase(FetchQuakeCoords.rejected, (state, action) => {
-    //   state.isLoading = 'failed';
-    //   state.error = action.error.message;
-    // });
   },
 });
 

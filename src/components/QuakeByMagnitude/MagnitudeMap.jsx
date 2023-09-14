@@ -37,7 +37,7 @@ function MagnitudeMap({ earthquakes }) {
     };
   }, [earthquakes]);
 
-  return <div id="map" style={{ height: '100vh', width: '100vw' }}></div>;
+  return <div className='Map' id="map" style={{ height: '100vh', width: '80vw' }}></div>;
 }
 
 export default MagnitudeMap;

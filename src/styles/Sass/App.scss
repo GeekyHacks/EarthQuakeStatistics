@@ -7,69 +7,16 @@
 }
 
 body {
-  background: transparent;
-  font-size: 10px;
-  padding: 0.2rem;
-
-  @include columnFlex;
-
-  justify-content: center;
-  align-items: stretch;
-  white-space: nowrap;
-
-  h2,
-  span,
-  h3 {
-    color: $fontColor;
-    font-weight: 600;
-    font-size: 1em;
-  }
-}
-
-#root {
-  @include columnFlex;
-
-  justify-content: center;
-  align-items: center;
-}
-
-.card {
-  @include columnFlex;
-
-  justify-content: center;
-  align-items: center;
+  background-image: url('../../assets/quakeBg.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  color: aliceblue;
 }
 
 ::placeholder {
   color: $secondarycolor;
   font-weight: 600;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-
-  &:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-
-  &.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-  }
-}
-
-.read-the-docs {
-  color: $primarycolor !important;
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }

@@ -17,7 +17,7 @@ const FiveSix = ({ minMagnitude, maxMagnitude }) => {
 
   return (
     <div>
-      <h1>Earthquake Map</h1>
+
       {isLoading === 'loading' && <p>Loading...</p>}
       {isLoading === 'failed' && <p>Error: {error}</p>}
       {isLoading === 'succeeded' && earthquakes.length > 0 ? (

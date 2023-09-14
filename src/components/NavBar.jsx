@@ -7,7 +7,7 @@ const NavBar = () => {
     <>
       <nav>
         <NavLink className="navItem" to="/quakes/">
-          Select Continent
+          Select Magnitude
         </NavLink>
         <NavLink className="navItem" to="/quakes/DynamicMagnitude">
           Dynamic Magnitude

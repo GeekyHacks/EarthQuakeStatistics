@@ -5,8 +5,10 @@ footer {
   position: relative;
   align-self: stretch;
   top: auto;
+  bottom: 1rem;
+  color: aliceblue;
   padding: 0.5rem;
-  background: white;
+  background: transparent;
   margin-top: 2rem;
   opacity: 0.6;
 }
@@ -15,5 +17,5 @@ footer a {
   opacity: 0.6;
   cursor: pointer;
   border: none;
-  color: blue;
+  color: aliceblue;
 }

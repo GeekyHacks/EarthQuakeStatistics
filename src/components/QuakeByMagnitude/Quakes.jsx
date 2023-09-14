@@ -4,20 +4,17 @@ import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/Qua
 import MagnitudeMap from './MagnitudeMap';
 
 const FiveSix = ({ minMagnitude, maxMagnitude }) => {
-  // Accept minMagnitude and maxMagnitude as props
   const dispatch = useDispatch();
   const { earthquakes, isLoading, error } = useSelector((state) => state.earthquake);
 
   useEffect(() => {
-    // Fetch earthquake data when the component mounts and whenever min/max magnitude changes
-    dispatch(setMinMagnitude(minMagnitude)); // Set minMagnitude from props
-    dispatch(setMaxMagnitude(maxMagnitude)); // Set maxMagnitude from props
+    dispatch(setMinMagnitude(minMagnitude));
+    dispatch(setMaxMagnitude(maxMagnitude));
     dispatch(FetchQuakeMag());
   }, [dispatch, minMagnitude, maxMagnitude]);
 
   return (
     <div>
-
       {isLoading === 'loading' && <p>Loading...</p>}
       {isLoading === 'failed' && <p>Error: {error}</p>}
       {isLoading === 'succeeded' && earthquakes.length > 0 ? (

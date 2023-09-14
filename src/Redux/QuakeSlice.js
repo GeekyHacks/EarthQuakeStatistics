@@ -1,5 +1,3 @@
-// // earthquakeSlice.js
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const apiUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
@@ -21,7 +19,6 @@ export const FetchQuakeMag = createAsyncThunk('earthquake/FetchQuakeMag', async 
     const response = await fetch(apiUrl);
     const data = await response.json();
 
-    // Filter earthquakes by magnitude between minMagnitude and maxMagnitude
     const filteredQuakes = data.features.filter(
       (quake) => quake.properties.mag >= minMagnitude && quake.properties.mag <= maxMagnitude
     );
@@ -36,14 +33,12 @@ export const FetchQuakeCoords = createAsyncThunk('earthquake/FetchQuakeCoords', 
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    // Extract coordinates from earthquake data
     const coordinates = data.features.map((quake) => {
       const { geometry } = quake;
       console.log(geometry.coordinates);
       return geometry.coordinates;
     });
     console.log(coordinates);
-    // Dispatch the coordinates to the store
     dispatch(setCoordinates(coordinates));
   } catch (error) {
     throw error;

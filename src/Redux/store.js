@@ -1,5 +1,3 @@
-// store.js
-
 import { configureStore } from '@reduxjs/toolkit';
 import earthquakeReducer, { FetchQuakeMag } from './QuakeSlice';
 
@@ -9,6 +7,5 @@ const store = configureStore({
   },
 });
 
-store.dispatch(FetchQuakeMag()); // Dispatch the fetchEarthquakes action to fetch data when the store is initialized
-
+store.dispatch(FetchQuakeMag());
 export default store;

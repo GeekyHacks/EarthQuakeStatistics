@@ -4,6 +4,8 @@ import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/Qua
 import MagnitudeMap from './MagnitudeMap';
 import PropTypes from 'prop-types';
 
+
+
 const FiveSix = ({ minMagnitude, maxMagnitude }) => {
   const dispatch = useDispatch();
   const { earthquakes, isLoading, error } = useSelector((state) => state.earthquake);

@@ -10,7 +10,6 @@
   padding: 0.3rem;
   gap: 0.5rem;
 }
-
 .QuakeByMap div {
   align-items: baseline;
   gap: 0.1rem;
@@ -30,3 +29,5 @@ input[type=number] {
   border: none;
   border-radius: 3px;
 }
+
+/*# sourceMappingURL=QuakeByMag.css.map */

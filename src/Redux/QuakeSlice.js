@@ -66,18 +66,18 @@ const earthquakeSlice = createSlice({
       .addCase(FetchQuakeMag.rejected, (state, action) => {
         state.isLoading = 'failed';
         state.error = action.error.message;
-      })
-      // .addCase(FetchQuakeCoords.pending, (state) => {
-      //   state.isLoading = 'loading';
-      // })
-      // .addCase(FetchQuakeCoords.fulfilled, (state, action) => {
-      //   state.isLoading = 'succeeded';
-      //   state.coordinates = action.payload;
-      // })
-      // .addCase(FetchQuakeCoords.rejected, (state, action) => {
-      //   state.isLoading = 'failed';
-      //   state.error = action.error.message;
-      // });
+      });
+    // .addCase(FetchQuakeCoords.pending, (state) => {
+    //   state.isLoading = 'loading';
+    // })
+    // .addCase(FetchQuakeCoords.fulfilled, (state, action) => {
+    //   state.isLoading = 'succeeded';
+    //   state.coordinates = action.payload;
+    // })
+    // .addCase(FetchQuakeCoords.rejected, (state, action) => {
+    //   state.isLoading = 'failed';
+    //   state.error = action.error.message;
+    // });
   },
 });
 

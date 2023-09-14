@@ -7,14 +7,12 @@
   text-align: center;
   color: aliceblue;
 }
-
 .MagnitudeSelector h2 {
   flex: 1;
 }
 
 .button-container {
   flex: 1;
-  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -23,6 +21,7 @@
 }
 
 .magnitude-button {
+  position: relative;
   flex: 1;
   align-self: stretch;
   background-color: rgba(0, 0, 0, 0.5);
@@ -39,3 +38,22 @@
 .magnitude-button:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+.BR_Span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.TL_Img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 1.5rem;
+}
+
+/*# sourceMappingURL=MagnitudeSelector.css.map */

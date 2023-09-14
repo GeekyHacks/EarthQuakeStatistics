@@ -23,14 +23,12 @@ body {
   text-align: center;
   color: aliceblue;
 }
-
 .MagnitudeSelector h2 {
   flex: 1;
 }
 
 .button-container {
   flex: 1;
-  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -39,6 +37,7 @@ body {
 }
 
 .magnitude-button {
+  position: relative;
   flex: 1;
   align-self: stretch;
   background-color: rgba(0, 0, 0, 0.5);
@@ -54,6 +53,23 @@ body {
 
 .magnitude-button:hover {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.BR_Span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.TL_Img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 1.5rem;
 }
 
 nav {
@@ -80,12 +96,10 @@ nav {
   color: aliceblue;
   opacity: 0.8;
 }
-
 .ContactComponent h3 {
   padding-left: 0.5rem;
   font-size: 1em;
 }
-
 .ContactComponent ul {
   padding-left: 1.5rem;
 }
@@ -102,7 +116,6 @@ nav {
   padding: 0.3rem;
   gap: 0.5rem;
 }
-
 .QuakeByMap div {
   align-items: baseline;
   gap: 0.1rem;
@@ -152,3 +165,5 @@ footer a {
   border: none;
   color: aliceblue;
 }
+
+/*# sourceMappingURL=index.css.map */

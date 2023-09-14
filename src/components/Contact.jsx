@@ -11,6 +11,7 @@ const Contact = () => {
       </div>
     );
   
+    
     return result;
   };
   

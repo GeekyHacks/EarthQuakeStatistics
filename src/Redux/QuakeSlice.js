@@ -8,42 +8,37 @@ const initialState = {
   error: null,
   minMagnitude: 4,
   maxMagnitude: 5,
-  coordinates: [],
 };
 
 export const FetchQuakeMag = createAsyncThunk('earthquake/FetchQuakeMag', async (_, { getState }) => {
-  try {
-    const { earthquake } = getState();
-    const { minMagnitude, maxMagnitude } = earthquake;
+  const { earthquake } = getState();
+  const { minMagnitude, maxMagnitude } = earthquake;
 
-    const response = await fetch(apiUrl);
-    const data = await response.json();
+  const response = await fetch(apiUrl);
+  const data = await response.json();
 
-    const filteredQuakes = data.features.filter(
-      (quake) => quake.properties.mag >= minMagnitude && quake.properties.mag <= maxMagnitude
-    );
-    console.log(filteredQuakes);
-    return filteredQuakes;
-  } catch (error) {
-    throw error;
-  }
+  const filteredQuakes = data.features.filter(
+    (quake) => quake.properties.mag >= minMagnitude && quake.properties.mag <= maxMagnitude
+  );
+  console.log(filteredQuakes);
+  return filteredQuakes;
 });
 
-export const FetchQuakeCoords = createAsyncThunk('earthquake/FetchQuakeCoords', async (_, { getState, dispatch }) => {
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    const coordinates = data.features.map((quake) => {
-      const { geometry } = quake;
-      console.log(geometry.coordinates);
-      return geometry.coordinates;
-    });
-    console.log(coordinates);
-    dispatch(setCoordinates(coordinates));
-  } catch (error) {
-    throw error;
-  }
-});
+// export const FetchQuakeCoords = createAsyncThunk('earthquake/FetchQuakeCoords', async (_, { dispatch }) => {
+//   try {
+//     const response = await fetch(apiUrl);
+//     const data = await response.json();
+//     const coordinates = data.features.map((quake) => {
+//       const { geometry } = quake;
+//       console.log(geometry.coordinates);
+//       return geometry.coordinates;
+//     });
+//     console.log(coordinates);
+//     dispatch(setCoordinates(coordinates));
+//   } catch (error) {
+//     throw error;
+//   }
+// });
 
 const earthquakeSlice = createSlice({
   name: 'earthquake',
@@ -72,17 +67,17 @@ const earthquakeSlice = createSlice({
         state.isLoading = 'failed';
         state.error = action.error.message;
       })
-      .addCase(FetchQuakeCoords.pending, (state) => {
-        state.isLoading = 'loading';
-      })
-      .addCase(FetchQuakeCoords.fulfilled, (state, action) => {
-        state.isLoading = 'succeeded';
-        state.coordinates = action.payload;
-      })
-      .addCase(FetchQuakeCoords.rejected, (state, action) => {
-        state.isLoading = 'failed';
-        state.error = action.error.message;
-      });
+      // .addCase(FetchQuakeCoords.pending, (state) => {
+      //   state.isLoading = 'loading';
+      // })
+      // .addCase(FetchQuakeCoords.fulfilled, (state, action) => {
+      //   state.isLoading = 'succeeded';
+      //   state.coordinates = action.payload;
+      // })
+      // .addCase(FetchQuakeCoords.rejected, (state, action) => {
+      //   state.isLoading = 'failed';
+      //   state.error = action.error.message;
+      // });
   },
 });
 

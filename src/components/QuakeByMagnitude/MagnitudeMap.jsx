@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import L from 'leaflet';
 import '../../../node_modules/leaflet/dist/leaflet.css';
 
@@ -33,4 +34,7 @@ function MagnitudeMap({ earthquakes }) {
   return <div className="Map" id="map" style={{ height: '100vh', width: '80vw' }}></div>;
 }
 
+MagnitudeMap.propTypes = {
+  earthquakes: PropTypes.array.isRequired, // Specify the prop type for 'earthquakes'
+};
 export default MagnitudeMap;

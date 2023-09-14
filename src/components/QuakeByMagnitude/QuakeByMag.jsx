@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
 import MagnitudeMap from './MagnitudeMap';
@@ -20,7 +20,7 @@ const QuakeByMag = () => {
   };
 
   return (
-    <div className='QuakeByMap'>
+    <div className="QuakeByMap">
       <h1>Earthquake Map</h1>
       <div>
         <label htmlFor="minMagnitude">Minimum Magnitude:</label>

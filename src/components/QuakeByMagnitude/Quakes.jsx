@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
 import MagnitudeMap from './MagnitudeMap';
+import PropTypes from 'prop-types';
 
 const FiveSix = ({ minMagnitude, maxMagnitude }) => {
   const dispatch = useDispatch();
@@ -27,6 +28,10 @@ const FiveSix = ({ minMagnitude, maxMagnitude }) => {
       )}
     </div>
   );
+};
+FiveSix.propTypes = {
+  minMagnitude: PropTypes.number.isRequired,
+  maxMagnitude: PropTypes.number.isRequired,
 };
 
 export default FiveSix;

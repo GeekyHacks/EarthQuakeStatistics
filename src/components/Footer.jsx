@@ -8,6 +8,7 @@ const Footer = () => {
     </footer>
   );
 
+  
   return result;
 };
 

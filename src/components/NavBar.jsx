@@ -5,13 +5,13 @@ const NavBar = () => {
   const result = (
     <>
       <nav>
-        <NavLink className="navItem" to="/quakes/">
+        <NavLink className="navItem" to="/EarthquakesTracker/">
           Select Magnitude
         </NavLink>
-        <NavLink className="navItem" to="/quakes/DynamicMagnitude">
+        <NavLink className="navItem" to="/EarthquakesTracker/DynamicMagnitude">
           Dynamic Magnitude
         </NavLink>
-        <NavLink className="navItem" to="/quakes/Contact">
+        <NavLink className="navItem" to="/EarthquakesTracker/Contact">
           Contact
         </NavLink>
       </nav>

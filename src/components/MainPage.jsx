@@ -11,13 +11,13 @@ export default function MainPage() {
     <div className="MainPage">
       <NavBar />
       <Routes>
-        <Route path="/quakes/" element={<MagnitudeSelector />}>
+        <Route path="/EarthquakesTracker/" element={<MagnitudeSelector />}>
           Select Continent
         </Route>
-        <Route path="/quakes/DynamicMagnitude" element={<QuakeByMag />}>
+        <Route path="/EarthquakesTracker/DynamicMagnitude" element={<QuakeByMag />}>
           Dynamic Magnitude
         </Route>
-        <Route path="/quakes/Contact" element={<Contact />}>
+        <Route path="/EarthquakesTracker/Contact" element={<Contact />}>
           Contact
         </Route>
       </Routes>

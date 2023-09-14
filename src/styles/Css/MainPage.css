@@ -1,0 +1,8 @@
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/*# sourceMappingURL=MainPage.css.map */

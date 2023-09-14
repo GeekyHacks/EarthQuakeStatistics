@@ -1,0 +1,59 @@
+.MagnitudeSelector {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  color: aliceblue;
+}
+.MagnitudeSelector h2 {
+  flex: 1;
+}
+
+.button-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  padding: 10px;
+}
+
+.magnitude-button {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  margin: 5px;
+  padding: 2rem 3rem;
+  cursor: pointer;
+  text-align: center;
+  color: aliceblue;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.magnitude-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.BR_Span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.TL_Img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 1.5rem;
+}
+
+/*# sourceMappingURL=MagnitudeSelector.css.map */

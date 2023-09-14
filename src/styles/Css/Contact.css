@@ -1,0 +1,15 @@
+.ContactComponent {
+  align-self: center;
+  margin: 2rem;
+  color: aliceblue;
+  opacity: 0.8;
+}
+.ContactComponent h3 {
+  padding-left: 0.5rem;
+  font-size: 1em;
+}
+.ContactComponent ul {
+  padding-left: 1.5rem;
+}
+
+/*# sourceMappingURL=Contact.css.map */

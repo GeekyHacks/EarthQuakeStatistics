@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
 import MagnitudeMap from './MagnitudeMap';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
+import backBtn from '../../assets/left.svg';
 
-
-
-const FiveSix = ({ minMagnitude, maxMagnitude }) => {
+const FiveSix = () => {
+  const { minMagnitude, maxMagnitude } = useParams();
   const dispatch = useDispatch();
   const { earthquakes, isLoading, error } = useSelector((state) => state.earthquake);
 
@@ -21,7 +22,10 @@ const FiveSix = ({ minMagnitude, maxMagnitude }) => {
       {isLoading === 'loading' && <p>Loading...</p>}
       {isLoading === 'failed' && <p>Error: {error}</p>}
       {isLoading === 'succeeded' && earthquakes.length > 0 ? (
-        <div>
+        <div className="mapContainer">
+          <a href="../../" className="back-button">
+            <img className="TL_Img" src={backBtn} alt="Back" />
+          </a>
           <MagnitudeMap earthquakes={earthquakes} />
         </div>
       ) : (
@@ -32,8 +36,8 @@ const FiveSix = ({ minMagnitude, maxMagnitude }) => {
   );
 };
 FiveSix.propTypes = {
-  minMagnitude: PropTypes.number.isRequired,
-  maxMagnitude: PropTypes.number.isRequired,
+  // minMagnitude: PropTypes.number.isRequired,
+  // maxMagnitude: PropTypes.number.isRequired,
 };
 
 export default FiveSix;

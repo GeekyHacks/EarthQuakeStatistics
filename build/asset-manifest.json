@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/EarthquakesTracker/static/css/main.9afd8aa5.css",
+    "main.js": "/EarthquakesTracker/static/js/main.bd28f562.js",
+    "static/media/quakeBg.jpg": "/EarthquakesTracker/static/media/quakeBg.f1c3629f278fd02da959.jpg",
+    "static/media/left.svg": "/EarthquakesTracker/static/media/left.4c23e63b61c002e04d5b6a5dbc5effe4.svg",
+    "index.html": "/EarthquakesTracker/index.html",
+    "main.9afd8aa5.css.map": "/EarthquakesTracker/static/css/main.9afd8aa5.css.map",
+    "main.bd28f562.js.map": "/EarthquakesTracker/static/js/main.bd28f562.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9afd8aa5.css",
+    "static/js/main.bd28f562.js"
+  ]
+}

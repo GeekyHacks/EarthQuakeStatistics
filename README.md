@@ -8,7 +8,7 @@
   <br/>
   <h3><b>EarthquakesTracker
 </b></h3>
-  <p>This Repo will display the latest earthquakes based on magnitude. Bootstraped with react vite, and data managed with redux.</p>
+  <p>This Repo will display the latest earthquakes based on magnitude, its  data managed with redux.</p>
 
 </div>
 
@@ -168,6 +168,7 @@ I would like to thank...
 - Microverse Review Team
 - Microverse Community in Slack
 - my Mentor @Strangeal
+- My mentor @chudisoft
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

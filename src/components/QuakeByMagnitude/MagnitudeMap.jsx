@@ -2,12 +2,13 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import L from 'leaflet';
 import '../../../node_modules/leaflet/dist/leaflet.css';
+
 function MagnitudeMap({ earthquakes }) {
   useEffect(() => {
     const mapContainer = document.getElementById('map');
 
     if (!mapContainer) {
-      return;
+      return undefined;
     }
 
     const map = L.map('map').setView([0, 0], 1);
@@ -21,8 +22,7 @@ function MagnitudeMap({ earthquakes }) {
       const [longitude, latitude] = coordinates;
       const customIcon = L.icon({
         iconUrl: '/marker-icon-2x.png',
-        iconSize: [20,28], // Set the size of your marker image
-        // iconAnchor: [anchorX, anchorY], // Adjust anchor point if necessary
+        iconSize: [20, 28],
       });
       L.marker([latitude, longitude], { icon: customIcon })
         .addTo(map)
@@ -38,6 +38,6 @@ function MagnitudeMap({ earthquakes }) {
 }
 
 MagnitudeMap.propTypes = {
-  earthquakes: PropTypes.array.isRequired, // Specify the prop type for 'earthquakes'
+  earthquakes: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 export default MagnitudeMap;

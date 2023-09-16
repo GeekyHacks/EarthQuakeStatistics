@@ -5,9 +5,9 @@ import NavBar from '../NavBar';
 describe('Navbar', () => {
   test('Navbar rendered correctly', () => {
     const navbar = render(
-        <Router>
-          <NavBar />
-        </Router>
+      <Router>
+        <NavBar />
+      </Router>,
 
     );
     expect(navbar).toMatchSnapshot();

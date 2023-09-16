@@ -7,7 +7,7 @@ describe('Navbar', () => {
     const container = render(
       <Router>
         <App />
-      </Router>
+      </Router>,
     );
     expect(container).toMatchSnapshot();
   });

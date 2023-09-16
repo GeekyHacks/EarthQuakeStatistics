@@ -18,15 +18,14 @@ export const FetchQuakeMag = createAsyncThunk('earthquake/FetchQuakeMag', async 
   const data = await response.json();
 
   const filteredQuakes = data.features.filter(
-    (quake) => quake.properties.mag >= minMagnitude && quake.properties.mag <= maxMagnitude
+    (quake) => quake.properties.mag >= minMagnitude && quake.properties.mag <= maxMagnitude,
   );
-  console.log(filteredQuakes);
   return filteredQuakes;
 });
 
 const earthquakeSlice = createSlice({
   name: 'earthquake',
-  initialState: initialState,
+  initialState,
   reducers: {
     setMinMagnitude: (state, action) => {
       state.minMagnitude = action.payload;

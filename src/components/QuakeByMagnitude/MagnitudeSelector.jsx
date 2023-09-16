@@ -17,17 +17,22 @@ const MagnitudeSelector = () => {
   const handleButtonClick = (min, max) => {
     setSelectedMagnitude({ min, max });
   };
-
+  
+/* eslint-disable-next-line */
   useEffect(() => {
     // Filter objects by keys matching searchValue
     if (searchValue === '') {
       setFilteredMag(mags);
     } else {
       // Filter the original data object by keys (case-insensitive)
-      const filteredData = mags.filter((x) => x.text.toLowerCase().includes(searchValue.toLowerCase()));
+      const filteredData = mags.filter(
+        (x) => x.text.toLowerCase().includes(searchValue.toLowerCase()),
+      );
       setFilteredMag(filteredData);
     }
   }, [searchValue]);
+
+
   // Function to render buttons with dynamic magnitude ranges
   const renderMagnitudeButton = (min, max, label) => (
     <div className="button-container">
@@ -76,7 +81,13 @@ const MagnitudeSelector = () => {
       </div>
       {selectedMagnitude && (
         <p>
-          Selected Magnitude Range: {selectedMagnitude.min} - {selectedMagnitude.max}
+          Selected Magnitude Range:
+          {' '}
+          {selectedMagnitude.min}
+          {' '}
+          -
+          {' '}
+          {selectedMagnitude.max}
         </p>
       )}
     </div>

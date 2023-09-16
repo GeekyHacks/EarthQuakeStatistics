@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
 import MagnitudeMap from './MagnitudeMap';
-import { useParams } from 'react-router-dom';
 import backBtn from '../../assets/left.svg';
 
 const FiveSix = () => {
@@ -19,7 +19,12 @@ const FiveSix = () => {
   return (
     <div>
       {isLoading === 'loading' && <p>Loading...</p>}
-      {isLoading === 'failed' && <p>Error: {error}</p>}
+      {isLoading === 'failed' && (
+      <p>
+        Error:
+        {error}
+      </p>
+      )}
       {isLoading === 'succeeded' && earthquakes.length > 0 ? (
         <div className="mapContainer">
           <a href="../../" className="back-button">

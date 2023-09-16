@@ -5,7 +5,9 @@ import MagnitudeMap from './MagnitudeMap';
 
 const QuakeByMag = () => {
   const dispatch = useDispatch();
-  const { earthquakes, isLoading, error, minMagnitude, maxMagnitude } = useSelector((state) => state.earthquake);
+  const {
+    earthquakes, isLoading, error, minMagnitude, maxMagnitude,
+  } = useSelector((state) => state.earthquake);
 
   useEffect(() => {
     dispatch(FetchQuakeMag());
@@ -31,7 +33,12 @@ const QuakeByMag = () => {
         <input type="number" id="maxMagnitude" value={maxMagnitude} onChange={handleMaxMagnitudeChange} />
       </div>
       {isLoading === 'loading' && <p>Loading...</p>}
-      {isLoading === 'failed' && <p>Error: {error}</p>}
+      {isLoading === 'failed' && (
+      <p>
+        Error:
+        {error}
+      </p>
+      )}
       {isLoading === 'succeeded' && earthquakes.length > 0 ? (
         <div>
           <MagnitudeMap earthquakes={earthquakes} />

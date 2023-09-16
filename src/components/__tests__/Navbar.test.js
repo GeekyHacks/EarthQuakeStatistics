@@ -1,10 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from '../NavBar';
-describe('NavBar', () => {
-  test('NavBar rendered correctly',  () => {
-    render(<NavBar />);
 
-    const navbar =  screen.findAllByRole('heading');
-    expect(navbar).toBeInTheDocument();
+describe('Navbar', () => {
+  test('Navbar rendered correctly', () => {
+    const navbar = render(
+        <Router>
+          <NavBar />
+        </Router>
+
+    );
+    expect(navbar).toMatchSnapshot();
   });
 });

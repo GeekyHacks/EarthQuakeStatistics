@@ -28,6 +28,7 @@ const MagnitudeSelector = () => {
 
   return (
     <div className="MagnitudeSelector">
+      
       <h2>Select a Magnitude Range:</h2>
       <div className="button-container">
         {renderMagnitudeButton(4, 5, 'Four to Five Magnitude')}
@@ -39,7 +40,13 @@ const MagnitudeSelector = () => {
       </div>
       {selectedMagnitude && (
         <p>
-          Selected Magnitude Range: {selectedMagnitude.min} - {selectedMagnitude.max}
+          Selected Magnitude Range:
+          {' '}
+          {selectedMagnitude.min}
+          {' '}
+          -
+          {' '}
+          {selectedMagnitude.max}
         </p>
       )}
     </div>

@@ -1,5 +1,5 @@
-import NavBar from './NavBar';
 import { Route, Routes } from 'react-router-dom';
+import NavBar from './NavBar';
 import QuakeByMag from './QuakeByMagnitude/QuakeByMag';
 import Contact from './Contact';
 import MagnitudeSelector from './QuakeByMagnitude/MagnitudeSelector';

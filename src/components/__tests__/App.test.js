@@ -1,9 +1,14 @@
-
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../../App';
 
-test('App matches snapshot', () => {
-  const { container } = render(<App />);
-  expect(container).toMatchSnapshot();
+describe('Navbar', () => {
+  test('Navbar rendered correctly', () => {
+    const container = render(
+      <Router>
+        <App />
+      </Router>
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

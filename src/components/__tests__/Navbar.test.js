@@ -1,13 +1,10 @@
-// import { render } from '@testing-library/react';
-// import { BrowserRouter as Router } from 'react-router-dom';
-// import NavBar from '../NavBar';
-// describe('NavBar', () => {
-//   test('NavBar rendered correctly', () => {
-//     const navbar = render(
-//       <Router>
-//         <NavBar />
-//       </Router>
-//     );
-//     expect(navbar).toMatchSnapshot();
-//   });
-// });
+import { render, screen } from '@testing-library/react';
+import NavBar from '../NavBar';
+describe('NavBar', () => {
+  test('NavBar rendered correctly', async () => {
+    render(<NavBar />);
+
+    const navbar = await screen.findAllByRole('heading');
+    expect(navbar).toBeInTheDocument();
+  });
+});

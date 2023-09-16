@@ -55,7 +55,7 @@ const MagnitudeSelector = () => {
       <input
         type="text"
         className="form-control"
-        placeholder="Search by category"
+        placeholder="Search by magnitude"
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);

@@ -35,7 +35,7 @@ const MagnitudeSelector = () => {
   const renderMagnitudeButton = (min, max, label) => (
     <div className="button-container">
       <a
-        href={`/EarthquakesTracker/Details/${min}/${max}`}
+        href={`/Details/${min}/${max}`}
         className="magnitude-button"
         style={{ backgroundImage: 'url(your-image-url)' }}
         onClick={() => handleButtonClick(min, max)}

@@ -76,12 +76,10 @@ import { useSelector } from 'react-redux';
 
 const MagnitudeSelector = () => {
   const [selectedMagnitude, setSelectedMagnitude] = useState(null);
-  const [setIsMapVisible] = useState(false); // State to control rendering of the map
   const QuakesNum = useSelector((state) => state.earthquake.earthquakes);
 
   const handleButtonClick = (min, max) => {
     setSelectedMagnitude({ min, max });
-    setIsMapVisible(true);
   };
 
   // Function to render buttons with dynamic magnitude ranges

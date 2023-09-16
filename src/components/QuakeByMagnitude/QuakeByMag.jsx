@@ -25,19 +25,22 @@ const QuakeByMag = () => {
     <div className="QuakeByMap">
       <h1>Earthquake Map</h1>
       <div>
+        {/* eslint-disable-next-line */}
         <label htmlFor="minMagnitude">Minimum Magnitude:</label>
         <input type="number" id="minMagnitude" value={minMagnitude} onChange={handleMinMagnitudeChange} />
       </div>
       <div>
+
+        {/* eslint-disable-next-line */}
         <label htmlFor="maxMagnitude">Maximum Magnitude:</label>
         <input type="number" id="maxMagnitude" value={maxMagnitude} onChange={handleMaxMagnitudeChange} />
       </div>
       {isLoading === 'loading' && <p>Loading...</p>}
       {isLoading === 'failed' && (
-      <p>
-        Error:
-        {error}
-      </p>
+        <p>
+          Error:
+          {error}
+        </p>
       )}
       {isLoading === 'succeeded' && earthquakes.length > 0 ? (
         <div>

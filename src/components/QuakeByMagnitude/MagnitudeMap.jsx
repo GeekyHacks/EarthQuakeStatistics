@@ -38,6 +38,7 @@ function MagnitudeMap({ earthquakes }) {
 }
 
 MagnitudeMap.propTypes = {
+  /* eslint-disable-next-line */
   earthquakes: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 export default MagnitudeMap;

@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import QuakeSlice from './QuakeSlice';
+import earthquakeReducer, { FetchQuakeMag } from './QuakeSlice';
 
 const store = configureStore({
-  reducers: {
-    quakes: QuakeSlice,
+  reducer: {
+    earthquake: earthquakeReducer,
   },
 });
+
+store.dispatch(FetchQuakeMag());
+export default store;

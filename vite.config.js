@@ -4,8 +4,9 @@ export default defineConfig({
   base: '/EarthquakesTracker/',
   plugins: [react()],
   test: {
-    globals: true,
     environment: 'jsdom',
-    setupFiles: './setupTests.js',
+    setupFiles: ['./tests/setup.ts'],
+    testMatch: ['./tests/**/*.test.tsx'],
+    globals: true,
   },
 });

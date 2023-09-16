@@ -17,8 +17,8 @@ const MagnitudeSelector = () => {
   const handleButtonClick = (min, max) => {
     setSelectedMagnitude({ min, max });
   };
-  
-/* eslint-disable-next-line */
+
+  /* eslint-disable-next-line */
   useEffect(() => {
     // Filter objects by keys matching searchValue
     if (searchValue === '') {
@@ -31,7 +31,6 @@ const MagnitudeSelector = () => {
       setFilteredMag(filteredData);
     }
   }, [searchValue]);
-
 
   // Function to render buttons with dynamic magnitude ranges
   const renderMagnitudeButton = (min, max, label) => (

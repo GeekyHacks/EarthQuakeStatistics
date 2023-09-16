@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const MagnitudeSelector = () => {
   const mags = [
@@ -23,30 +24,26 @@ const MagnitudeSelector = () => {
     if (searchValue === '') {
       setFilteredMag(mags);
     } else {
-      const filteredData = mags.filter(
-        (x) => x.text.toLowerCase().includes(searchValue.toLowerCase()),
-      );
+      const filteredData = mags.filter((x) => x.text.toLowerCase().includes(searchValue.toLowerCase()));
       setFilteredMag(filteredData);
     }
 
-  /* eslint-disable-next-line */
+    /* eslint-disable-next-line */
   }, [searchValue]);
 
   const renderMagnitudeButton = (min, max, label) => (
     <div className="button-container">
-      <a
-        href={`/Details/${min}/${max}`}
+      <Link
+        to={`/EarthquakesTracker/Details/${min}/${max}`}
         className="magnitude-button"
         style={{ backgroundImage: 'url(your-image-url)' }}
         onClick={() => handleButtonClick(min, max)}
       >
         {label}
         <span className="BR_Span">
-          {QuakesNum.filter(
-            (quake) => quake.properties.mag >= min && quake.properties.mag < max,
-          ).length}
+          {QuakesNum.filter((quake) => quake.properties.mag >= min && quake.properties.mag < max).length}
         </span>
-      </a>
+      </Link>
     </div>
   );
 
@@ -71,13 +68,7 @@ const MagnitudeSelector = () => {
       <div className="button-container">{filteredMags.map((x) => renderMagnitudeButton(x.x, x.y, x.text))}</div>
       {selectedMagnitude && (
         <p>
-          Selected Magnitude Range:
-          {' '}
-          {selectedMagnitude.min}
-          {' '}
-          -
-          {' '}
-          {selectedMagnitude.max}
+          Selected Magnitude Range: {selectedMagnitude.min} - {selectedMagnitude.max}
         </p>
       )}
     </div>

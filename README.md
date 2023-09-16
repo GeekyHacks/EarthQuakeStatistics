@@ -6,12 +6,13 @@
 
 <img src="./src/assets/welcometomyGIthub.png">
   <br/>
-[EarthquakesTracker](https://www.loom.com/share/288e9da7ee6c4719813f48441cc65279?sid=12fc8372-53ee-41f3-837a-95a8b907c6a4)
-
+  <h3><b>EarthquakesTracker
+</b></h3>
   <p>This Repo will display the latest earthquakes based on magnitude. Bootstraped with react vite, and data managed with redux.</p>
 
 </div>
 
+## [EarthquakesTracker video](https://www.loom.com/share/288e9da7ee6c4719813f48441cc65279?sid=12fc8372-53ee-41f3-837a-95a8b907c6a4)
 # 📗 Table of Contents
 
 - [EarthquakesTracker

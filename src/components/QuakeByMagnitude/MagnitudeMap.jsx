@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import L from 'leaflet';
 import '../../../node_modules/leaflet/dist/leaflet.css';
+import marker from '../../assets/marker-icon-2x.png';
 
 function MagnitudeMap({ earthquakes }) {
   useEffect(() => {
@@ -21,7 +22,7 @@ function MagnitudeMap({ earthquakes }) {
       const { coordinates } = geometry;
       const [longitude, latitude] = coordinates;
       const customIcon = L.icon({
-        iconUrl: '/marker-icon-2x.png',
+        iconUrl: marker,
         iconSize: [20, 28],
       });
       L.marker([latitude, longitude], { icon: customIcon })

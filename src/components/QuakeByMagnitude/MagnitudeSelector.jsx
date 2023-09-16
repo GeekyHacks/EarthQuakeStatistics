@@ -24,7 +24,8 @@ const MagnitudeSelector = () => {
     if (searchValue === '') {
       setFilteredMag(mags);
     } else {
-      const filteredData = mags.filter((x) => x.text.toLowerCase().includes(searchValue.toLowerCase()));
+      const filteredData = mags.filter((x) => x.text.toLowerCase().includes(searchValue.toLowerCase())
+      );
       setFilteredMag(filteredData);
     }
 
@@ -41,7 +42,10 @@ const MagnitudeSelector = () => {
       >
         {label}
         <span className="BR_Span">
-          {QuakesNum.filter((quake) => quake.properties.mag >= min && quake.properties.mag < max).length}
+          {
+            QuakesNum.filter((quake) => quake.properties.mag >= min && quake.properties.mag < max)
+              .length
+          }
         </span>
       </Link>
     </div>
@@ -65,7 +69,9 @@ const MagnitudeSelector = () => {
         }}
       />
       <h2>Select a Magnitude Range:</h2>
-      <div className="button-container">{filteredMags.map((x) => renderMagnitudeButton(x.x, x.y, x.text))}</div>
+      <div className="button-container">
+        {filteredMags.map((x) => renderMagnitudeButton(x.x, x.y, x.text))}
+      </div>
       {selectedMagnitude && (
         <p>
           Selected Magnitude Range: {selectedMagnitude.min} - {selectedMagnitude.max}

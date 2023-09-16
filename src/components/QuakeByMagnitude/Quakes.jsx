@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FetchQuakeMag, setMinMagnitude, setMaxMagnitude } from '../../Redux/QuakeSlice';
 import MagnitudeMap from './MagnitudeMap';
-import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import backBtn from '../../assets/left.svg';
 
@@ -34,10 +33,6 @@ const FiveSix = () => {
       )}
     </div>
   );
-};
-FiveSix.propTypes = {
-  // minMagnitude: PropTypes.number.isRequired,
-  // maxMagnitude: PropTypes.number.isRequired,
 };
 
 export default FiveSix;

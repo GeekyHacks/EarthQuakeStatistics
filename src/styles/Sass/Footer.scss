@@ -1,0 +1,36 @@
+footer {
+  font-size: 0.75em;
+  font-weight: 200;
+  position: relative;
+  align-self: stretch;
+  top: auto;
+  bottom: 1rem;
+  color: aliceblue;
+  padding: 0.5rem;
+  background: transparent;
+  margin-top: 2rem;
+  opacity: 0.6;
+}
+
+footer a {
+  transition: all 0.5s;
+  opacity: 0.6;
+  cursor: pointer;
+  border: none;
+  color: aliceblue;
+}
+
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    align-self: flex-start;
+    padding-left: 1.5rem;
+  }
+
+  #map {
+    width: 85vw !important;
+  }
+}

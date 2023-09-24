@@ -3,17 +3,18 @@ import NavBar from './NavBar';
 import QuakeByMag from './QuakeByMagnitude/QuakeByMag';
 import Contact from './Contact';
 import MagnitudeSelector from './QuakeByMagnitude/MagnitudeSelector';
-import FiveSix from './QuakeByMagnitude/Quakes';
+// import FiveSix from './QuakeByMagnitude/Quakes';
 
 export default function MainPage() {
   return (
     <div className="MainPage">
       <NavBar />
       <Routes>
-        <Route path="/EarthquakesTracker/" element={<MagnitudeSelector />}>
-          Select Continent
+        <Route path="/EarthquakesTracker/" element={<MagnitudeSelector />}></Route>
+        <Route path="/EarthquakesTracker/Details/" element={<MagnitudeSelector />}>
+          Select Magnitude
         </Route>
-        <Route path="/EarthquakesTracker/Details/:minMagnitude/:maxMagnitude" element={<FiveSix />} />
+        {/* <Route path="/EarthquakesTracker/Details/:minMagnitude/:maxMagnitude" element={<FiveSix />} /> */}
         <Route path="/EarthquakesTracker/DynamicMagnitude" element={<QuakeByMag />}>
           Dynamic Magnitude
         </Route>
